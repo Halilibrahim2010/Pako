@@ -1,0 +1,134 @@
+# Pako - Sürdürülebilir, minimalist ve basit bir paket yöneticisi.
+# Bu proje, Dolunay Projesi'nin bir parçasıdır.
+# Copyright (C) 2025 Dolunay Geliştirici Ekibi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pako 1.0\n"
+"POT-Creation-Date: 2025-04-29 22:56+0300\n"
+"PO-Revision-Date: 2025-04-30 12:00+0300\n"
+"Last-Translator: Dolunay Ekibi\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:41
+msgid "Warning: code_name can only contain alphanumeric characters!"
+msgstr ""
+
+#: main.cpp:45
+msgid "Warning: code_name not found, using default value"
+msgstr ""
+
+#: main.cpp:77
+msgid "DEBUG: Working directory: "
+msgstr ""
+
+#: main.cpp:78
+msgid "DEBUG: Package path: "
+msgstr ""
+
+#: main.cpp:90 main.cpp:222
+msgid "Error: Package couldn't be extracted!"
+msgstr ""
+
+#: main.cpp:96 main.cpp:172
+msgid "Error: Metadata not found!"
+msgstr ""
+
+#: main.cpp:112
+msgid "DEBUG: Archive file name: "
+msgstr ""
+
+#: main.cpp:116
+msgid "Error: Package couldn't be archived!"
+msgstr ""
+
+#: main.cpp:120
+msgid "DEBUG: Package archived: "
+msgstr ""
+
+#: main.cpp:123
+msgid "Package: "
+msgstr ""
+
+#: main.cpp:124 main.cpp:239
+msgid "Description: "
+msgstr ""
+
+#: main.cpp:128 main.cpp:242
+msgid "Dependencies:"
+msgstr ""
+
+#: main.cpp:156
+msgid " successfully installed!"
+msgstr ""
+
+#: main.cpp:159 main.cpp:208 main.cpp:250
+msgid "Error: "
+msgstr ""
+
+#: main.cpp:160
+msgid "DEBUG: Exception caught!"
+msgstr ""
+
+#: main.cpp:168
+msgid "DEBUG: Package creation started. Directory: "
+msgstr ""
+
+#: main.cpp:183
+msgid "DEBUG: Metadata read:"
+msgstr ""
+
+#: main.cpp:184 main.cpp:237
+msgid "Name: "
+msgstr ""
+
+#: main.cpp:185
+msgid "Code name: "
+msgstr ""
+
+#: main.cpp:186 main.cpp:238
+msgid "Version: "
+msgstr ""
+
+#: main.cpp:195
+msgid "Error: tar archive creation failed!"
+msgstr ""
+
+#: main.cpp:200
+msgid "Error: zstd compression failed!"
+msgstr ""
+
+#: main.cpp:205
+msgid "Package successfully created: "
+msgstr ""
+
+#: main.cpp:209
+msgid "DEBUG: Package creation error!"
+msgstr ""
+
+#: main.cpp:236
+msgid "Package Information:"
+msgstr ""
+
+#: main.cpp:261
+msgid "Usage:\n"
+msgstr ""
+
+#: main.cpp:262
+msgid "  pako install -y <package.pako>\n"
+msgstr ""
+
+#: main.cpp:263
+msgid "  pako create <directory>\n"
+msgstr ""
+
+#: main.cpp:264
+msgid "  pako info <package.pako> [-json]"
+msgstr ""
+
+#: main.cpp:281
+msgid "Error: Invalid command!"
+msgstr ""
