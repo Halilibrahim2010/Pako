@@ -1,15 +1,15 @@
-# Pako için Türkçe çeviriler.
-# Bu proje, Dolunay Projesi'nin bir parçasıdır.
-# Copyright (C) 2025 Dolunay Geliştirici Ekibi
+# Übersetzungen ins Französische für Pako.
+# Dieses Projekt ist Teil des Dolunay-Projekts.
+# Copyright (C) 2025 Dolunay Developer Team
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pako 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 17:31+0300\n"
+"POT-Creation-Date: 2025-05-01 17:43+0300\n"
 "PO-Revision-Date: 2025-04-30 12:00+0300\n"
 "Last-Translator: Dolunay Ekibi\n"
-"Language: tr\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,120 +17,121 @@ msgstr ""
 
 #: main.cpp:41
 msgid "Warning: code_name can only contain alphanumeric characters!"
-msgstr "Uyarı: code_name sadece alfanumerik karakterler içerebilir!"
+msgstr "Achtung: Codename darf nur alphanumerische Zeichen enthalten!"
 
 #: main.cpp:45
 msgid "Warning: code_name not found, using default value"
-msgstr "Uyarı: code_name bulunamadı, varsayılan değer kullanılıyor"
+msgstr "Achtung: code_name darf nur alphanumerische Zeichen enthalten!"
 
 #: main.cpp:77
 msgid "DEBUG: Working directory: "
-msgstr "HATA AYIKLAMA: Çalışma dizini: "
+msgstr "DEBUG: Arbeitsverzeichnis: "
 
 #: main.cpp:78
 msgid "DEBUG: Package path: "
-msgstr "HATA AYIKLAMA: Paket yolu: "
+msgstr "DEBUG: Paketpfad:"
 
 #: main.cpp:90 main.cpp:223
 msgid "Error: Package couldn't be extracted!"
-msgstr "Hata: Paket açılamadı!"
+msgstr "Fehler: Paket konnte nicht extrahiert werden!"
 
 #: main.cpp:96 main.cpp:172
 msgid "Error: Metadata not found!"
-msgstr "Hata: Metadata bulunamadı!"
+msgstr "Fehler: Metadaten nicht gefunden!"
 
 #: main.cpp:112
 msgid "DEBUG: Archive file name: "
-msgstr "HATA AYIKLAMA: Arşiv dosya adı: "
+msgstr "DEBUG: Name der Archivdatei:"
 
 #: main.cpp:116
 msgid "Error: Package couldn't be archived!"
-msgstr "Hata: Paket arşivlenemedi!"
+msgstr "Fehler: Paket konnte nicht archiviert werden!"
 
 #: main.cpp:120
 msgid "DEBUG: Package archived: "
-msgstr "HATA AYIKLAMA: Paket arşivlendi: "
+msgstr "DEBUG: Paket archiviert:"
 
 #: main.cpp:123
 msgid "Package: "
-msgstr "Paket: "
+msgstr "Paket:"
 
 #: main.cpp:124 main.cpp:240
 msgid "Description: "
-msgstr "Açıklama: "
+msgstr "Beschreibung:"
 
 #: main.cpp:128 main.cpp:243
 msgid "Dependencies:"
-msgstr "Bağımlılıklar: "
+msgstr "Abhängigkeiten:"
 
 #: main.cpp:156
+#, fuzzy
 msgid " successfully installed!"
-msgstr " başarıyla kuruldu!"
+msgstr "erfolgreich installiert!"
 
 #: main.cpp:159 main.cpp:209 main.cpp:251
 msgid "Error: "
-msgstr "Hata: "
+msgstr "Fehler:"
 
 #: main.cpp:160
 msgid "DEBUG: Exception caught!"
-msgstr "HATA AYIKLAMA: İstisna yakalandı!"
+msgstr "DEBUG: Ausnahme abgefangen!"
 
 #: main.cpp:168
 msgid "DEBUG: Package creation started. Directory: "
-msgstr "HATA AYIKLAMA: Paket oluşturma başladı. Dizin: "
+msgstr "DEBUG: Paketerstellung gestartet. Verzeichnis:"
 
 #: main.cpp:183
 msgid "DEBUG: Metadata read:"
-msgstr "HATA AYIKLAMA: Metadata okundu:"
+msgstr "DEBUG: Metadaten gelesen:"
 
 #: main.cpp:184 main.cpp:238
 msgid "Name: "
-msgstr "Ad: "
+msgstr "Name:"
 
 #: main.cpp:185
 msgid "Code name: "
-msgstr "Kod adı: "
+msgstr "Codename:"
 
 #: main.cpp:186 main.cpp:239
 msgid "Version: "
-msgstr "Sürüm: "
+msgstr "Version:"
 
 #: main.cpp:195
 msgid "Error: tar archive creation failed!"
-msgstr "Hata: tar arşivi oluşturulamadı!"
+msgstr "Fehler: Erstellen des Tar-Archivs fehlgeschlagen!"
 
 #: main.cpp:200
 msgid "Error: zstd compression failed!"
-msgstr "Hata: zstd sıkıştırması başarısız!"
+msgstr "Fehler: zstd-Komprimierung fehlgeschlagen!"
 
 #: main.cpp:205
 msgid "Package successfully created: "
-msgstr "Paket başarıyla oluşturuldu: "
+msgstr "Paket erfolgreich erstellt:"
 
 #: main.cpp:210
 msgid "DEBUG: Package creation error!"
-msgstr "HATA AYIKLAMA: Paket oluşturma hatası!"
+msgstr "DEBUG: Fehler beim Erstellen des Pakets!"
 
 #: main.cpp:237
 msgid "Package Information:"
-msgstr "Paket Bilgilendirmesi:"
+msgstr "Verpackungs informationen:"
 
 #: main.cpp:262
 msgid "Usage:\n"
-msgstr "Kullanım:\n"
+msgstr "Verwendung:\n"
 
 #: main.cpp:263
 msgid "  pako install -y <package.pako>\n"
-msgstr "  pako indir -y <paket.pako>\n"
+msgstr "  pako install -y <package.pako>\n"
 
 #: main.cpp:264
 msgid "  pako create <directory>\n"
-msgstr "  pako tasarla <dizin>\n"
+msgstr "  pako create <directory>\n"
 
 #: main.cpp:265
 msgid "  pako info <package.pako> [-json]"
-msgstr "  pako bilgi <paket.pako> [-json]"
+msgstr "  pako info <package.pako> [-json]"
 
 #: main.cpp:282
 msgid "Error: Invalid command!"
-msgstr "Hata: Bilinmeyen istem!"
+msgstr "Fehler: Ungültiger Befehl!"

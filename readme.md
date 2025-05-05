@@ -1,5 +1,7 @@
 # Pako - Sürdürülebilir, Minimalist ve Basit Bir Paket Yöneticisi
 
+> ⚠️ **Uyarı:** Bu proje şu anda geliştirme aşamasındadır ve kararlı bir sürüm değildir. Sadece test ve deneme amaçlı paylaşılmıştır. Kodlar zamanla değişebilir ve beklenmedik hatalar olabilir. İlerleyen zamanlarda tam sürüm yayınlanacaktır.
+
 **Pako**, Linux üzerinde kullanılabilecek minimalist bir paket yöneticisidir. Bu araç, kullanıcıların `.pako` formatındaki paketleri kurmasına, oluşturmasına ve bilgi almasına olanak tanır. Ayrıca, dil desteği sunarak farklı dillerde uygulamanın kullanılmasını sağlar. Başlıca olarak Dolunay projesi için geliştirilmiştir.
 
 ## Proje Amacı
@@ -35,5 +37,22 @@ make parallel
 
 ## Güvenlik
 - Pako, paketlerin güvenliğini sağlamak için bazı kontroller yapmaktadır. Örneğin, paket metadata'sındaki code_name değeri yalnızca alfanumerik karakterler ve alt çizgi içerebilir.
+
+## Dil ve Yerelleştirme
+Bu proje şu anda aşağıdaki dillerde kullanılabilir:
+
+- 🇹🇷 Türkçe
+
+- 🇬🇧 İngilizce
+
+- 🇩🇪 Almanca
+
+- 🇫🇷 Fransızca
+
+## Geliştiriciler
+Bu proje birkaç kişinin emeğiyle ortaya çıktı. Kodlayanlar, fikir verenler ve destek olan herkesin katkısı değerli. Aşağıda ismi geçenler doğrudan geliştirme sürecine katkıda bulundu:
+
+- Halil İbrahim AYKOL (Ana geliştirici)
+- İsmail EFE
 
 Eğer bu projeyi beğendiyseniz ve daha fazla gelişmesini isterseniz, katkıda bulunmaktan çekinmeyin!
