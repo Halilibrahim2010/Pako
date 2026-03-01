@@ -33,9 +33,14 @@
   - `<ctime>`
 - `unistd.h` ve `<locale.h>` – sistem ve lokalizasyon işlemleri için
 
+### Temel Ayarları Yapmak
+```
+chmod +x menuconfig.sh
+make menuconfig
+```
 ### Derleme
 ```bash
-make parallel
+make build
 ```
 ### Otomatik Yükleme
 ```bash
@@ -43,7 +48,7 @@ make install
 ```
 ### Sistemden Kaldırma
 ```
-make remove
+make uninstall
 ```
 
 ## Çalıştırma 
