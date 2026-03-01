@@ -14,6 +14,7 @@
 - **Paket Bilgisi Görüntüleme**: Metadata bilgilerini kolayca görüntüler.
 - **Bağımlılık Yönetimi**: Paketlerin bağımlılıklarını kontrol eder ve listeler.
 - **Esnek PATH Yönetimi**: `~/.local/pako/bin` eklenerek terminalden direkt çalıştırılabilir.
+- **Çapraz Derleme**: Hem x86, hemde arm64 sistemler pako kullanabilir. Cross platform destekler.
 
 ## Kurulum
 ## Gereksinimler

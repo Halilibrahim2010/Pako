@@ -1,32 +1,36 @@
-# Install hedefi
-.PHONY: install
-install:
-	mkdir -p $(HOME)/.local/pako/bin
-	mkdir -p $(HOME)/.local/pako/locale
-	cp pako $(HOME)/.local/pako/bin/pako
-	cp -r locale/* $(HOME)/.local/pako/locale/
-	chmod 755 $(HOME)/.local/pako/bin/pako
-	echo "Pako başarıyla kuruldu! Çalıştırmak için: $(HOME)/.local/pako/bin/pako"
-	
-# Remove hedefi
-.PHONY: remove
-remove:
-	rm -rf $(HOME)/.local/pako
-	echo "Pako ve tüm dosyaları kaldırıldı."
+# Yapılandırma dosyasını içe aktar
+-include .config
+
+# Varsayılan değerler
+INSTALL_DIR ?= $(HOME)/.local/pako
+TARGET_ARCH ?= native
+JOBS ?= 1
+
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2
-LDFLAGS =  -lzstd -lstdc++fs -lssl -lcrypto
+# Mimariyi seç
+ifeq ($(TARGET_ARCH),aarch64)
+    CXX = aarch64-linux-gnu-g++
+    CXXFLAGS = -std=c++17 -Wall -Wextra -O2
+else
+    CXX = g++
+    CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -march=$(TARGET_ARCH)
+endif
+LDFLAGS = -lzstd -lstdc++fs -lssl -lcrypto
 
 TARGET = pako
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-# Sistemdeki CPU çekirdek sayısını al
-NPROC = $(shell nproc)
+.PHONY: all build clean install uninstall menuconfig pot update-po update-mo gettext
 
-.PHONY: all clean
+all: build
 
-all: $(TARGET)
+# Derleme sürecini başlat
+build:
+	$(MAKE) -j$(JOBS) $(TARGET)
+	@echo ""
+	@echo "Derleme pırıl pırıl tamamlandı."
+	@echo "Kurmak için 'make install' komutunu kullan."
 
 $(TARGET): $(OBJS)
 	$(CXX) $(OBJS) -o $(TARGET) $(LDFLAGS)
@@ -34,52 +38,43 @@ $(TARGET): $(OBJS)
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Menü arayüzünü tetikler
+menuconfig:
+	@./menuconfig.sh
+
+install:
+	mkdir -p $(INSTALL_DIR)/bin
+	mkdir -p $(INSTALL_DIR)/locale
+	cp $(TARGET) $(INSTALL_DIR)/bin/$(TARGET)
+	cp -r locale/* $(INSTALL_DIR)/locale/
+	chmod 755 $(INSTALL_DIR)/bin/$(TARGET)
+	@echo "Pako başarıyla kuruldu! Yol: $(INSTALL_DIR)/bin/$(TARGET)"
+
+uninstall:
+	rm -rf $(INSTALL_DIR)
+	@echo "Pako ve tüm dosyaları $(INSTALL_DIR) dizininden kazındı."
+
 clean:
 	rm -f $(OBJS) $(TARGET)
 
-# Paralel derleme için
-.NOTPARALLEL:
-.PHONY: parallel
-parallel:
-	make all -j$(NPROC)
-
-# Gettext hedefleri
-.PHONY: pot update-po update-mo
-
-# Diller
+# --- Gettext Ayarları ---
 LANGUAGES = tr fr de
-
-# Klasörler
 LOCALE_DIR = locale
 
-# .pot dosyasını oluşturma
 pot:
 	mkdir -p $(LOCALE_DIR)
 	xgettext --from-code=UTF-8 -k_ -d pako -o $(LOCALE_DIR)/pako.pot main.cpp
 
-# PO dosyasını güncelleme
 update-po:
-	# Her dil için PO dosyasını günceller
 	for lang in $(LANGUAGES); do \
 		mkdir -p $(LOCALE_DIR)/$$lang/LC_MESSAGES; \
 		msgmerge --update $(LOCALE_DIR)/$$lang/LC_MESSAGES/pako.po $(LOCALE_DIR)/pako.pot; \
 	done
 
-# MO dosyasını oluşturma
 update-mo:
-	# Her dil için MO dosyasını oluşturur
 	for lang in $(LANGUAGES); do \
 		mkdir -p $(LOCALE_DIR)/$$lang/LC_MESSAGES; \
 		msgfmt $(LOCALE_DIR)/$$lang/LC_MESSAGES/pako.po -o $(LOCALE_DIR)/$$lang/LC_MESSAGES/pako.mo; \
 	done
 
 gettext: pot update-po update-mo
-
-build: gettext parallel
-	@echo ""
-	@echo "Tüm hedefler başarıyla tamamlandı."
-	@echo "Çalıştırmak için ./pako komutunu kullanın."
-	@echo "Dil ayarları için locale dizinine bakın."
-	@echo "Dil ayarlarını güncellemek için make gettext komutunu kullanın."
-	@echo "Paralel derleme için make parallel komutunu kullanın."
-	@echo "Temizlemek için make clean komutunu kullanın."
