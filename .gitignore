@@ -1,0 +1,15 @@
+# Derleme objeleri ve binary
+obj/
+pako
+.config
+
+# IDE/Editor dosyaları
+*.swp
+*.sublime-workspace
+*.vscode/
+
+# Log ve geçici dizinler
+*.log
+*.tmp
+tmp/
+build/
